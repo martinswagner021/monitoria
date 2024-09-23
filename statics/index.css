@@ -109,3 +109,12 @@ code{
     overflow-y: auto;
 }
 
+.next-previous-page{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.next-previous-page #back{
+    transform: rotate(180deg);
+}

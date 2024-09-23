@@ -68,16 +68,46 @@ x:
                     <h3>Vetores (int [N])</h3>
                     <p>De mesma forma, as informações serão armazenadas sequencialmente na memória, porém números inteiros ocupam 4 bytes na memória e portanto para acessar o próximo elemento, teremos de saltar 4 em 4 bytes para cada elemento que deseja-se acessar.</p>
 <pre><code class="language-c">arr:
-        Endereço : Bytes
-        0x7fff672decc4 : 01 00 00 00
-        0x7fff672decc8 : 02 00 00 00
-        0x7fff672deccc : 03 00 00 00</code></pre>
+    Endereço : Bytes
+    0x7fff672decc4 : 01 00 00 00
+    0x7fff672decc8 : 02 00 00 00
+    0x7fff672deccc : 03 00 00 00</code></pre>
                     <p>Vale ressaltar que a variável armazena apenas o endereço base, então as informações contidas nos bytes também podem ser representadas desta forma:</p>
 <pre><code class="language-c">arr:
-        Endereço : Bytes
-        0x7fff672decc4 : 01 00 00 00 02 00 00 00 03 00 00 00
-        //              | inteiro 0 | inteiro 0 | inteiro 0 |
-        //              |              array                |</code></pre>
+    Endereço : Bytes
+    0x7fff672decc4 : 01 00 00 00 02 00 00 00 03 00 00 00
+    //              | inteiro 0 | inteiro 0 | inteiro 0 |
+    //              |              array                |</code></pre>
+                </div>
+                <div class="next-previous-page">
+                    <a href="index.html">
+                        <svg id="back" xmlns="http://www.w3.org/2000/svg" fill="#4ACE7F" width="4em" height="4em" viewBox="0 0 32 32" id="icon">
+                            <defs>
+                            <style>
+                                .cls-1 {
+                                fill: none;
+                                }
+                            </style>
+                            </defs>
+                            <polygon points="16 8 14.57 9.393 20.15 15 8 15 8 17 20.15 17 14.57 22.573 16 24 24 16 16 8"/>
+                            <path d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"/>
+                            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+                        </svg>
+                    </a>
+                    <a href="struct.html">
+                        <svg id="next" xmlns="http://www.w3.org/2000/svg" fill="#4ACE7F" width="4em" height="4em" viewBox="0 0 32 32" id="icon">
+                            <defs>
+                                <style>
+                                    .cls-1 {
+                                fill: none;
+                            }
+                            </style>
+                            </defs>
+                            <polygon points="16 8 14.57 9.393 20.15 15 8 15 8 17 20.15 17 14.57 22.573 16 24 24 16 16 8"/>
+                            <path d="M16,30A14,14,0,1,1,30,16,14.0158,14.0158,0,0,1,16,30ZM16,4A12,12,0,1,0,28,16,12.0137,12.0137,0,0,0,16,4Z"/>
+                            <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </main>
