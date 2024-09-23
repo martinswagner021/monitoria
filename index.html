@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" href="statics/index.css">
         <title>Monitoria</title>
-	<meta charset="UTF-8">
+	    <meta charset="UTF-8">
 
         <!-- syntax highlighting -->
         <link rel="stylesheet" href="./statics/highlightjs/styles/github-dark.min.css">
@@ -22,28 +22,34 @@
         <div class="header">
             <h1><a href="index.html">Monitoria</a></h1>
             <ul>
-                <li><a href="vetor.html">Vetor</a></li>
-                <li><a href="">String</a></li>
-                <li><a href="">Lista Encadeada</a></li>
-                <li><a href="">Realloc</a></li>
+                <li><a href="basico.html">Tipos Básicos</a></li>
+                <li><a href="struct.html">Struct</a></li>
+                <li><a href="lista.html">Lista Encadeada</a></li>
+                <li><a href="arv-bin.html">Árvore Binária</a></li>
             </ul>
         </div>
-        <div class="content">
-            <div class="text">
-                <h1>Apresentação do projeto</h1>
-                <p>Funcionamento e explicação sobre o acesso à memória.</p>
-                <p>Esta seção também pode conter <b>referências</b></p>
-                <p>Esta seção também pode conter listas:</p>
-                <ul>
-                    <li>Item 1</li>
-                    <li>Item 2</li>
-                    <li>Item 3</li>
-                </ul>
-                <pre><code id="code-content" class="language-c"></code></pre>
+        <main>
+            <div class="content">
+                <div class="text">
+                    <h1>Apresentação do projeto</h1>
+                    <p>Este projeto tem como objetivo demonstrar a estrutura de armazenamento de dados na memória na linguagem C ensinada nas aulas de Programação de Computadores II.
+                    </p>
+                    <pre><code id="code-content" class="language-c"></code></pre>
+                    <p>Aqui veremos alguns códigos exemplares, seus endereços de memória e valores armazenados.</p>
+<pre><code class="language-c">#include "stdio.h"
+
+int main(){
+    int x = 5;
+}</code></pre>
+                    <p>No exemplo acima, vemos a variável x recebendo valor 5 e portanto obtemos na memória algo similar à:</p>
+<pre><code class="language-c">x:
+    Endereço : Int
+    0x7ffe32b12a64 : 05 00 00 00
+</code></pre>
+                    <p>Na saída do código temos o endereço em hexadecimal correspondente à variável x e o valor de seus <b>4 bytes</b> armazenados. Lembrando que uma variável do tipo int possui <b>32 bits</b>, ou o equivalente à 4 bytes.</p>
+                    <p>Veremos com mais detalhes a relação de bytes e cada tipo de variável em C na aba de <a href="./basico.html"><b>Tipos Básicos</b></a>.</p>
+                </div>
             </div>
-        </div>
-        <div class="right">
-            <img src="https://th.bing.com/th/id/OIP.aT5pnFroHy-uoJrMXv8l-QHaFj?pid=ImgDet&w=474&h=355&rs=1" alt="test">
-        </div>
+        </main>
     </body>
 </html>

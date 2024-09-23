@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="stylesheet" href="statics/index.css">
+    <title>Monitoria</title>
+    <meta charset="UTF-8">
+
+    <!-- syntax highlighting -->
+    <link rel="stylesheet" href="./statics/highlightjs/styles/github-dark.min.css">
+    <script src="./statics/highlightjs/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="./statics/highlightjs/languages/go.min.js"></script>
+    <!-- syntax highlighting -->
+
+    <!-- code imported to be displayed -->
+    <script src="./statics/struct.js"></script>
+    <!-- code imported to be displayed -->
+
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="header">
+        <h1><a href="index.html">Monitoria</a></h1>
+        <ul>
+            <li><a href="basico.html">Tipos Básicos</a></li>
+            <li><a href="struct.html">Struct</a></li>
+            <li><a href="lista.html">Lista Encadeada</a></li>
+            <li><a href="arv-bin.html">Árvore Binária</a></li>
+        </ul>
+    </div>
+    <main>
+        <div class="code" id="code">
+            <pre><code id="code-content" class="language-c"></code></pre>
+        </div>
+        <div class="content">
+            <div class="text">
+                <h3>Struct</h3>
+                <p>Uma <code>struct</code> é constituída de um conjunto de variáveis de tipos variados agrupados, construindo uma
+                    única variável com múltiplas informações.</p>
+                <pre><code class="language-c">estrutura:
+    Endereço : Bytes
+    0xff932380 : 61 00 00 00 0A 00 00 00 62 00 00 00
+    //          |  char a   |   int b   |  char c   |
+    //          |     a     |   10 hex  |     x     |</code></pre>
+                <p>Percebe-se que há um espaço entre as variáveis do tipo <code>int</code> e <code>char</code>, estes espaços podem estar preenchidos com algum tipo de lixo de memória, isso acontece para que exista um <a href="https://www.geeksforgeeks.org/structure-member-alignment-padding-and-data-packing/"><b>alinhamento de informações na memória</b></a>.</p>
+                <p>Este alinhamento é feito de forma a facilitar o acesso aos dados armazenados na <code>struct</code>, pois seria necessário calcular restos e levar em conta o tipo de cada variável para poder acessá-las sequencialmente, no entanto com os endereços sendo múltiplos simples, torna-se mais fácil e eficiente o acesso à informação armazenada.</p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="stylesheet" href="statics/index.css">
+    <title>Monitoria</title>
+    <meta charset="UTF-8">
+
+    <!-- syntax highlighting -->
+    <link rel="stylesheet" href="./statics/highlightjs/styles/github-dark.min.css">
+    <script src="./statics/highlightjs/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="./statics/highlightjs/languages/go.min.js"></script>
+    <!-- syntax highlighting -->
+
+    <!-- code imported to be displayed -->
+    <script src="./statics/arv-bin.js"></script>
+    <!-- code imported to be displayed -->
+
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="header">
+        <h1><a href="index.html">Monitoria</a></h1>
+        <ul>
+            <li><a href="basico.html">Tipos Básicos</a></li>
+            <li><a href="struct.html">Struct</a></li>
+            <li><a href="lista.html">Lista Encadeada</a></li>
+            <li><a href="arv-bin.html">Árvore Binária</a></li>
+        </ul>
+    </div>
+    <main>
+        <div class="code" id="code">
+            <pre><code id="code-content" class="language-c"></code></pre>
+        </div>
+        <div class="content">
+            <div class="text">
+                <h3>Árvore Binária</h3>
+                <p>As <a href="https://www.freecodecamp.org/portuguese/news/tudo-o-que-voce-precisa-saber-sobre-estruturas-de-dados-em-arvore/"><b>árvores</b></a>, quando vistas na memória em sua estrutura básica, são bastante similares aos resultados que obtivemos quando tratamos das <a href="struct.html"><b>structs</b></a> e <a href="lista.html"><b>listas encadeadas</b></a>, uma vez que vamos apenas adicionar um novo ponteiro e os chamaremos de esquerda e direita, representando os filhos desta árvore, obtendo desta forma os ponteiros <code>esq</code> e <code>dir</code>.</p>
+                    <pre><code class="language-c">raiz:
+    Endereço : Bytes
+    0xff932380 : 0A 00 00 00 84 25 97 ff 94 25 97 ff
+    //          |  inteiro  | endereço  | endereço
+    //          |  10 hex   | filho_esq | filho_dir
+
+filho_esq:
+    Endereço : Bytes
+    0xff972584 : 05 00 00 00 00 00 00 00 00 00 00 00
+    //          |  inteiro  | endereço  | endereço
+    //          |   5 hex   | filho_esq | filho_dir
+filho_dir:
+    Endereço : Bytes
+    0xff972594 : 0F 00 00 00 00 00 00 00 00 00 00 00
+    //          |  inteiro  | endereço  | endereço
+    //          |  15 hex   | filho_esq | filho_dir</code></pre>
+                <p>E desta forma pode-se visualizar a seguinte árvore desenhada:</p>
+                <div style="text-align: center;"><img src="statics/arv-bin-example.png" alt="" style="max-width: 30em;"></div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

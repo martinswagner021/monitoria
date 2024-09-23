@@ -16,23 +16,27 @@ void print_bits(const char* name, void* data, int n){
 #define PRINT_BITS(X) print_bits(#X, &X, sizeof X);
 
 struct Dados{
-    int x, y; 
+    char a;
+    int b;
+    char c;
     struct Dados* next;
 };
 
 int main(){
     float a[4] = {5.2, 4.2, 9.6, 2.6};
-    char s[8] = "abacaxi";
+    char s[3] = "abc";
     int b[3] = {138735, 35435, 6843552};
-    int x = 260;
+    int x = 1024;
+    char k = 'a';
     int* p = &x;
-    struct Dados d = {2451, 1354, NULL};
-    struct Dados e = {1485, 5467, &d};
+    struct Dados d = {'a', 10, 'x', NULL};
+    struct Dados e = {'b', 'c', &d};
 
     PRINT_BITS(a);
     PRINT_BITS(s);
     PRINT_BITS(b);
     PRINT_BITS(x);
+    PRINT_BITS(k);
     PRINT_BITS(p);
     PRINT_BITS(d);
     PRINT_BITS(e);

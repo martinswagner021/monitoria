@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch("./samples/" + codeFileName)
     .then(res => res.text())
     .then(text => {
-        codeHTML.innerHTML = text;
+        codeHTML.textContent = text;
     })
     .then(() => {
         hljs.highlightAll()

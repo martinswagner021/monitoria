@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <link rel="stylesheet" href="statics/index.css">
+        <title>Monitoria</title>
+	    <meta charset="UTF-8">
+
+        <!-- syntax highlighting -->
+        <link rel="stylesheet" href="./statics/highlightjs/styles/github-dark.min.css">
+        <script src="./statics/highlightjs/highlight.min.js"></script>
+        <!-- and it's easy to individually load additional languages -->
+        <script src="./statics/highlightjs/languages/go.min.js"></script>
+        <!-- syntax highlighting -->
+
+        <!-- code imported to be displayed -->
+        <script src="./statics/basico.js"></script>
+        <!-- code imported to be displayed -->
+        
+    </head>
+    <body>
+        <div class="background"></div>
+        <div class="header">
+            <h1><a href="index.html">Monitoria</a></h1>
+            <ul>
+                <li><a href="basico.html">Tipos Básicos</a></li>
+                <li><a href="struct.html">Struct</a></li>
+                <li><a href="lista.html">Lista Encadeada</a></li>
+                <li><a href="arv-bin.html">Árvore Binária</a></li>
+            </ul>
+        </div>
+        <main>
+            <div class="code" id="code">
+                <pre><code id="code-content" class="language-c"></code></pre>
+            </div>
+            <div class="content">
+                <div class="text">
+                    <h3>Tipo char</h3>
+                    <p>Cada caracter é armazenado em um byte, desta forma, teremos na memória algo similar à:</p>
+                    <pre><code class="language-c">k:
+    Endereço : Char
+    0x7ffdd4ff6d23 : 61</code></pre>
+                    <p>Acima obtemos o endereço onde o dado está armazenado e seu valor correspondente, como podemos observar, utiliza-se apenas um byte, ou <b>8 bits</b> para representar o caracter <b>a</b> segundo a tabela ascii.</p>
+                    <h3>Tipo int</h3>
+                    <p>Para os inteiros temos até 32 bits para representação de valores inteiros. Portanto para o código <code class="language-c">int x = 1024;</code> temos algo similar à:</p>
+                    <pre><code class="language-c">x:
+    Endereço : Int
+    0xff972274 : 00 04 00 00</code></pre>
+                    <p>O valor 4 que obtivemos pode ser analisado, pois trata-se dos bits <code>0000 0100 0000 0000</code>, ou 1 seguido de 10 zeros, que em binário equivale ao 1024, no entanto como as informações estão <b>separadas por bytes</b>, visualizamos o segundo byte com valor 4.</p>
+                    <h3>Ponteiros (int *)</h3>
+                    <p>Para ponteiros, obtemos o endereço de onde o ponteiro está armazenado e como valor obtemos o endereço do <b>elemento apontado</b> por ele, por exemplo:</p>
+                    <pre><code class="language-c">p:
+    Endereço : Endereço Apontado
+    0xff972278 : 74 22 97 ff
+x:
+    Endereço : Int
+    0xff972274 : 00 04 00 00</code></pre>
+                    <p>Percebe-se que os <b>bytes do endereço que ele aponta</b> são exatamente os mesmos do endereço em que a variável x se encontra.</p>
+                    <p>E isso nos permite armazenar não o valor, mas onde ele se encontra para utilizar em funções quando passamos <a href="https://linguagemc.com.br/funcao-com-passagem-por-referencia/#:~:text=Na%20linguagem%20C%20a%20passagem%20por%20refer%C3%AAncia%20%C3%A9,forma%20%C3%A9%20denominada%20fun%C3%A7%C3%A3o%20com%20passagem%20por%20refer%C3%AAncia."><b>variáveis por referência</b></a></p>
+                    <h3>Strings (char [N])</h3>
+                    <p>Para as strings, que são tratadas como vetores de caractéres, é preciso entender o funcionamento dos vetores como ponteiros.</p>
+                    <p>Basicamente os vetores são <b>alocações de bytes</b> que começam em um endereço específico, a variável que armazena um vetor tem como valor o <b>endereço do primeiro elemento do vetor</b>, exatamente como um ponteiro, desta forma, o acesso à memória é feita <b>somando o número de bytes para o próximo elemento ao endereço base</b></p>
+<pre><code class="language-c">s:
+    Endereço : Bytes
+    0xff932389 : 61 62 63 00
+    //            a| b| c|\0</code></pre>
+                    <p>Neste exemplo, temos o endereço que aponta o elemento <code>s[0]</code>, cada caracter é armazenado como um elemento da tabela ASCII seguido de um <code>'\0'</code> para marcar o final da string.</p>
+                    <p>Cada caracter pode ser acessado na memória com o byte sucessivo, uma vez que cada elemento <code>char</code> da tabela ASCII é representado por apenas um byte.</p>
+                    <h3>Vetores (int [N])</h3>
+                    <p>De mesma forma, as informações serão armazenadas sequencialmente na memória, porém números inteiros ocupam 4 bytes na memória e portanto para acessar o próximo elemento, teremos de saltar 4 em 4 bytes para cada elemento que deseja-se acessar.</p>
+<pre><code class="language-c">arr:
+        Endereço : Bytes
+        0x7fff672decc4 : 01 00 00 00
+        0x7fff672decc8 : 02 00 00 00
+        0x7fff672deccc : 03 00 00 00</code></pre>
+                    <p>Vale ressaltar que a variável armazena apenas o endereço base, então as informações contidas nos bytes também podem ser representadas desta forma:</p>
+<pre><code class="language-c">arr:
+        Endereço : Bytes
+        0x7fff672decc4 : 01 00 00 00 02 00 00 00 03 00 00 00
+        //              | inteiro 0 | inteiro 0 | inteiro 0 |
+        //              |              array                |</code></pre>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
