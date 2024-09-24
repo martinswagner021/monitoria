@@ -38,7 +38,7 @@
                     <p>Cada caracter é armazenado em um byte, desta forma, teremos na memória algo similar à:</p>
                     <pre><code class="language-c">k:
     Endereço : Char
-    0x7ffdd4ff6d23 : 61</code></pre>
+    0xffde32bb : 61</code></pre>
                     <p>Acima obtemos o endereço onde o dado está armazenado e seu valor correspondente, como podemos observar, utiliza-se apenas um byte, ou <b>8 bits</b> para representar o caracter <b>a</b> segundo a tabela ascii.</p>
                     <h3>Tipo int</h3>
                     <p>Para os inteiros temos até 32 bits para representação de valores inteiros. Portanto para o código <code class="language-c">int x = 1024;</code> temos algo similar à:</p>
@@ -69,13 +69,13 @@ x:
                     <p>De mesma forma, as informações serão armazenadas sequencialmente na memória, porém números inteiros ocupam 4 bytes na memória e portanto para acessar o próximo elemento, teremos de saltar 4 em 4 bytes para cada elemento que deseja-se acessar.</p>
 <pre><code class="language-c">arr:
     Endereço : Bytes
-    0x7fff672decc4 : 01 00 00 00
-    0x7fff672decc8 : 02 00 00 00
-    0x7fff672deccc : 03 00 00 00</code></pre>
+    0xffde32a4 : 01 00 00 00
+    0xffde32a8 : 02 00 00 00
+    0xffde32ac : 03 00 00 00</code></pre>
                     <p>Vale ressaltar que a variável armazena apenas o endereço base, então as informações contidas nos bytes também podem ser representadas desta forma:</p>
 <pre><code class="language-c">arr:
     Endereço : Bytes
-    0x7fff672decc4 : 01 00 00 00 02 00 00 00 03 00 00 00
+    0xffde32a4 : 01 00 00 00 02 00 00 00 03 00 00 00
     //              | inteiro 0 | inteiro 0 | inteiro 0 |
     //              |              array                |</code></pre>
                 </div>

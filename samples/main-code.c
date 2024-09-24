@@ -26,7 +26,7 @@ int main(){
     float a[4] = {5.2, 4.2, 9.6, 2.6};
     char s[3] = "abc";
     int b[3] = {138735, 35435, 6843552};
-    int x = 1024;
+    int x = 5;
     char k = 'a';
     int* p = &x;
     struct Dados d = {'a', 10, 'x', NULL};
