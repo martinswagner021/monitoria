@@ -39,13 +39,22 @@
                     <pre><code class="language-c">k:
     Endereço : Char
     0xffde32bb : 61</code></pre>
-                    <p>Acima obtemos o endereço onde o dado está armazenado e seu valor correspondente, como podemos observar, utiliza-se apenas um byte, ou <b>8 bits</b> para representar o caracter <b>a</b> segundo a tabela ascii.</p>
+                    <p>Acima obtemos o endereço onde o dado está armazenado e seu valor <b>hexadecimal</b> correspondente, como podemos observar, utiliza-se apenas um byte, ou <b>8 bits</b> para representar o caracter <b>a</b> segundo a <a href="https://upload.wikimedia.org/wikipedia/commons/d/dd/ASCII-Table.svg"><b>tabela ASCII</b></a>.</p>
                     <h3>Tipo int</h3>
                     <p>Para os inteiros temos até 32 bits para representação de valores inteiros. Portanto para o código <code class="language-c">int x = 1024;</code> temos algo similar à:</p>
                     <pre><code class="language-c">x:
     Endereço : Int
     0xff972274 : 00 04 00 00</code></pre>
-                    <p>O valor 4 que obtivemos pode ser analisado, pois trata-se dos bits <code>0000 0100 0000 0000</code>, ou 1 seguido de 10 zeros, que em binário equivale ao 1024, no entanto como as informações estão <b>separadas por bytes</b>, visualizamos o segundo byte com valor 4.</p>
+                    <p>Lembrando que estamos tratando de valores <b>hexadecimais</b> e dispostos em <b>little endian</b>, o byte com valor 4 que obtivemos equivale aos bits <code>0000 0100</code>, desta forma os bytes estão dispostos da seguinte forma:</p>
+                    <pre><code class="language-c">Hexadecimal :     00    |     04    |     00    |     00    |
+Binário     : 0000 0000 | 0000 0100 | 0000 0000 | 0000 0000 |</code></pre>
+                    <p>Quando recomposto na ordem de leitura usual, temos 1 seguido de 10 zeros, que em binário equivale ao 1024.</p>
+                    <pre><code class="language-c">x:
+    Endereço : Int
+    0xff972274 : 00 04 00 00
+    // Valor equivalente : 0x00000400 = 0000 0000 0000 0000 0000 0100 0000 0000 = 1024
+</code></pre>
+
                     <h3>Ponteiros (int *)</h3>
                     <p>Para ponteiros, obtemos o endereço de onde o ponteiro está armazenado e como valor obtemos o endereço do <b>elemento apontado</b> por ele, por exemplo:</p>
                     <pre><code class="language-c">p:
@@ -63,8 +72,8 @@ x:
     Endereço : Bytes
     0xff932389 : 61 62 63 00
     //            a| b| c|\0</code></pre>
-                    <p>Neste exemplo, temos o endereço que aponta o elemento <code>s[0]</code>, cada caracter é armazenado como um elemento da tabela ASCII seguido de um <code>'\0'</code> para marcar o final da string.</p>
-                    <p>Cada caracter pode ser acessado na memória com o byte sucessivo, uma vez que cada elemento <code>char</code> da tabela ASCII é representado por apenas um byte.</p>
+                    <p>Neste exemplo, temos o endereço que aponta o elemento <code>s[0]</code>, cada caracter é armazenado com um código de equivalência da <a href="https://upload.wikimedia.org/wikipedia/commons/d/dd/ASCII-Table.svg"><b>tabela ASCII</b></a> seguido de um <code>'\0'</code> para marcar o final da string.</p>
+                    <p>Cada caracter pode ser acessado na memória com o byte sucessivo, uma vez que cada elemento <code>char</code> da <a href="https://upload.wikimedia.org/wikipedia/commons/d/dd/ASCII-Table.svg"><b>tabela ASCII</b></a> é representado por apenas um byte.</p>
                     <h3>Vetores (int [N])</h3>
                     <p>De mesma forma, as informações serão armazenadas sequencialmente na memória, porém números inteiros ocupam 4 bytes na memória e portanto para acessar o próximo elemento, teremos de saltar 4 em 4 bytes para cada elemento que deseja-se acessar.</p>
 <pre><code class="language-c">arr:
@@ -76,8 +85,8 @@ x:
 <pre><code class="language-c">arr:
     Endereço : Bytes
     0xffde32a4 : 01 00 00 00 02 00 00 00 03 00 00 00
-    //              | inteiro 0 | inteiro 0 | inteiro 0 |
-    //              |              array                |</code></pre>
+//              | inteiro 0 | inteiro 1 | inteiro 2 |
+//              |              array                |</code></pre>
                 </div>
                 <div class="next-previous-page">
                     <a href="index.html">

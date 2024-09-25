@@ -46,8 +46,16 @@ int main(){
     Endereço : Int
     0xffde32bc : 05 00 00 00
 </code></pre>
-                    <p>Na saída do código temos o endereço em hexadecimal correspondente à variável x e o valor de seus <b>4 bytes</b> armazenados. Lembrando que uma variável do tipo int possui <b>32 bits</b>, ou o equivalente a 4 bytes.</p>
-                    <p>Veremos com mais detalhes a relação de bytes e cada tipo de variável em C na aba de <a href="./basico.html"><b>Tipos Básicos</b></a>.</p>
+                    <p>Na saída do código temos o endereço em <b>hexadecimal</b> correspondente à variável x e o valor de seus <b>4 bytes</b> armazenados, também em <b>hexadecimal</b>. Lembrando que uma variável do tipo <code>int</code> possui <b>32 bits</b>, ou o equivalente aos <b>4 bytes</b> apresentados.</p>
+                    <p>Além disso, é importante ressaltar a ordem em que os dados estão sendo dispostos, isso ocorre por conta da abordagem utilizada pelo sistema para armazenar informações na memória, esse conceito chama-se <a href="https://www.geeksforgeeks.org/little-and-big-endian-mystery/"><b>Endianness</b></a>, no exemplo o sistema está utilizando o formato <b>Little Endian</b> para armazenar os bytes, neste método os <b>bytes menos significativos são armazenados no início do endereço</b>, desta forma os dados aparentam estar na ordem contrária ao que estamos acostumados a ler, pois os bits menos significativos estão sendo lidos primeiro.</p>
+                    <p>Por exemplo, para o dado em hexadecimal <code>0x12345678</code> armazenado no endereço fictício <code>0x1000</code>, estaria disposto em <b>Little Endian</b> desta forma:</p>
+                    <pre><code class="language-c">Endereço : Dados
+0x1000   : 78
+0x1001   : 56
+0x1002   : 34
+0x1003   : 12</code></pre>
+                    <p>E por este motivo, temos o valor <code>05 00 00 00</code> sendo apresentado,ao invés do esperado <code>00 00 00 05</code>.</p>
+                    <p>Concluímos a apresentação de como as informações e exemplos estarão dispostos para tratar com mais detalhes a relação de bytes e cada tipo de variável em C na próxima seção <a href="./basico.html"><b>Tipos Básicos</b></a>.</p>
                 </div>
                 <div class="next-previous-page"></div>
                     <a href="basico.html">
